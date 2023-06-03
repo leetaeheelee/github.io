@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>AllWeb</title>
+<meta charset="UTF-8" />
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+  @media screen and (max-width: 779px) {
+ 
+ nav a{float: right;
+       margin: 0 3px;
+       margin-top: 30px;
+       padding: 10px;
+       color: steelblue;
+       font-size: 1rem;
+       
+   }
+   body{overflow: auto;
+   width: 300px auto; margin: 10px auto;
+   
+ } 
+ 
+  
+  img{
+  width: 200px auto;
+  }
+  .css_test {
+    background-image : url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQftkqBtUfWfQUViiVafkW6yOUJ4e_rWx2PUg&usqp=CAU");
+    border : 1px solid black;
+    display : inline-block;      
+    font-weight : bold;
+    height : 500px;
+    line-height : 150px;
+    overflow : auto;
+    text-align : center;
+    width : 30%;
+        }
+                
+ .css_test span {
+  background : #fff;
+  border-radius : 5px;
+  padding : 15px;
+     }
+
+ h1 {
+     padding-top: 20px;
+     padding-bottom: 20px;
+     text-shadow: 5px 5px 5px black;
+}
+#box { width: 50px; height: 50px; background-color: red;}
+  #box.hover { background-color: blue; border-radius: 50px;}
+  #panel a{
+       margin: 3px ;
+       padding: 5px ;
+       color: darkred;}
+  }
+
+  @media screen and (min-width: 780px) {
+   img{
+   float: left;
+  }
+   nav a{float: right;
+       margin: 0 3px ;
+       padding: 10px ;
+       color: steelblue;
+   }
+   body{
+   width: 780px; margin: 50px auto;
+   
+ } 
+ .css_test {
+    background-image : url("https://ai.kangwon.ac.kr/app/board/attach/image/thumb_317754_1636890612000.do");
+    border : 1px solid black;
+    display : block;      
+    font-weight : bold;
+    height : 300px;
+    
+    line-height : 150px;
+    overflow : auto;
+    text-align : center;
+    width : 60%;
+        }
+                
+ .css_test span {
+  background : #fff;
+  border-radius : 5px ;
+  padding : 15px;
+     }
+
+ h1 {
+     padding-top: 100px;
+     padding-bottom: 40px;
+     text-shadow: 5px 5px 5px black;
+     
+}
+
+  }
+
+  table{
+    border-radius: 30px 30px 30px 30px;
+    background-color: black;
+    border-collapse: collapse;
+    color: white;
+    border: 1px solid rgb(60, 205, 104);
+  }
+
+  .top_bar { background: steelblue; position: fixed; 
+      left: 0; top: 0; right: 0; height: 50px; }
+
+  
+  #box { width: 100px; height: 100px; background-color: red;}
+  #box.hover { background-color: blue; border-radius: 50px;}
+
+  #panel, .flip {border: 1px solid black;}
+  #panel {display: none; padding: 50px;}
+  #panel a{float: right;
+       margin: 0 3px ;
+       padding: 5px ;
+       color: darkred;}
+  button { margin-bottom: 10px;}
+   
+  
+</style>
+<script>
+ 
+  window.onload = function () {
+    $('button').click(function () {
+      $('.page').fadeToggle('slow');
+    });
+    $(".flip").click(function(){ $("#panel").slideToggle(2000);});
+    $(".stop").click(function(){ $("#panel").stop();});
+  
+    $(document).ready(function () {
+    $('#box').hover(function () {$('#box').addClass('hover');}, 
+      function () {$('#box').removeClass('hover');
+     
+
+    });
+
+    
+    $('form').submit(function (event) {
+      var value = $('input').val(); // 유효성 검사 console.log(/^[가-힣]([가-힣])+/.test(value))
+      if (/^[가-힣]([가-힣])+/.test(value)) { 
+        alert('GoGoGo!'); //event.preventDefault();
+      } else { 
+        alert('한글 단어로 입력하시오!'); event.preventDefault(); }
+     });
+
+  });
+  
+  
+    const imageRootPath = 'https://rintiantta.github.io/academy-html/example/chapter_12/';
+    var count = 0;
+    const image = document.getElementById('image');
+    var frames = ['0.png', '1.png', '2.png', '3.png', '4.png','5.png', '6.png', '7.png', 
+      '8.png', '9.png','10.png', '11.png', '12.png', '13.png', '14.png'];
+
+    setInterval(function () {
+      image.src = imageRootPath+frames[count % frames.length]; 
+      count++;
+      }, 1000 / 60);
+
+      var clock = document.getElementById('clock');
+      // 1초마다 함수를 실행합니다.
+      setInterval(function () {
+        var now = new Date();
+        clock.innerHTML = now.toString();
+        }, 1000);
+
+        var img=document.getElementById('image');
+        img.onclick = function(){
+        alert("유사 소닉");
+
+      
+  };
+
+ 
+  };
+  alert("Here is AllWeb welcome page!");
+  console.log("안녕하세요. 이태희입니다. 모든 걸 때려박은 페이지입니다.");
+  console.log("점수 잘 주세요 교수님!!");
+ 
+ 
+  
+ 
+  
+
+
+
+
+ 
+
+</script>
+
+</head>
+
+
+
+<body>
+  
+  <div class="top_bar"></div>
+  <br>
+  
+    <nav>
+      <div>
+        <a href="AllWeb.html">AllWeb</a>
+        <a href="Google.html">Google</a>
+        <a href="spa.html">Home</a>
+      </div>
+    </nav>
+  
+  
+  <br>
+  
+<img id="image">
+<br>
+<ul>
+  <li>
+    <h1>모든 것</h1>
+    <ol>
+       <li>details</li>
+       <li>quality</li>
+       <li>speed</li>
+    </ol>
+  </li>
+</ul>
+<table border="1">
+  <tr>
+    <th></th>
+    <th>월</th>
+    <th>화</th>
+    <th>수</th>
+    <th>목</th>
+    <th>금</th>
+  </tr>
+  <tr>
+    <th>9</th>
+    <td></td>
+    <td></td>
+    <td rowspan="2" bgcolor="darkgreen">리눅스프로그래밍</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>10</th>
+    <td></td>
+    <td rowspan="2" bgcolor="darkgreen">리눅스프로그래밍</td>
+    <td rowspan="2" bgcolor="steelblue">웹프로그래밍</td>
+    <td rowspan="3" bgcolor="orange">이산수학</td>
+    
+  </tr>
+  <tr>
+    <th>11</th>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>12</th>
+    <td rowspan="3" bgcolor="salmon">논리회로</td>
+    <td></td>
+    <td></td>
+   
+    <th></th>
+  </tr>
+  <tr>
+    <th>1</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td rowspan="2" bgcolor="steelblue">웹프로그래밍</td>
+  </tr>
+  <tr>
+    <th>2</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    
+  </tr>
+  <tr>
+    <th>3</th>
+    <td></th>
+    <td rowspan="2" bgcolor="#ea4335">자료구조</td>
+    <td rowspan="2" bgcolor="#ea4335">자료구조</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>4</th>
+    <td rowspan="2" bgcolor="#34a853">인문학과치유</td>
+    <td rowspan="2" bgcolor="#34a853">인문학과 치유</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>5</th>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<select>
+  <optgroup label="과목">
+    <option>리눅스프로그래밍</option>
+    <option>웹프로그래밍</option>
+    <option>이산수학</option>
+    <option>논리회로</option>
+    <option>자료구조</option>
+    <option>인문학과 치유</option>
+</select>
+<div></div>
+
+  <div class="css_test" style="background-attachment:scroll;">
+    <span>scroll</span><br>
+    <span>곰두리</span><br>
+    <span>곰두리</span><br>
+    <span>곰두리</span><br>
+    <span>scroll</span><br>
+ </div>
+ </div>
+   <div class="css_test" style="background-attachment:fixed;">
+     <span>fixed</span><br>
+     <span>강원대</span><br>
+     <span>fixed</span><br>
+   </div>
+   <div class="css_test" style="background-attachment:local;">
+     <span>local</span><br>
+     <span>곰두리</span><br>
+     <span>두리</span><br>
+     <span>곰두리</span><br>
+     <span>local</span><br>
+   </div>
+ 
+<h1 id="clock"></h1>
+<div id="box"></div>
+<form><label>단어를 입력하시오!</label><input type="text"><input type="submit"></form>
+
+<button>Toggle Show</button>
+<div class="page">
+<h1>한낱 빛 따위가 어둠의 깊이를 어찌 알랴.</h1>
+<p>When you believe in a thing, believe in it all the way, implicitly and unquestionable. </>
+</div>
+
+<input type="button" class="flip start">
+  <input type="button" class="stop">
+  <div class="flip">위 버튼 눌러보시오</div>
+  <div id="panel">
+    <nav>
+      <div>
+      <a href="Google.html">Google</a>
+      <a href="spa.html">Home</a>
+       <a href="AllWeb.html">AllWeb</a>
+        </div>
+    </nav>
+  </div>
+
+  
+</body>
+</html>
